@@ -106,5 +106,5 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 ```python
 import findspark
 findspark.init()
-import spark
+import pyspark
 ```
