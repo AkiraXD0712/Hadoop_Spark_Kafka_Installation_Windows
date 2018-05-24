@@ -1,5 +1,11 @@
 # Hadoop_Spark_Kafka_Installation_Windows
-Tutorial for installing Hadoop, Spark, Kafka on Windows
+Tutorial for installing Hadoop 2.8.4, Spark 2.3, Pyspark and Kafka on Windows 10
+
+Reference: 
+1. https://github.com/MuhammadBilalYar/Hadoop-On-Window/wiki/Step-by-step-Hadoop-2.8.0-installation-on-Window-10
+2. http://blog.51cto.com/balich/2058194
+3. https://stackoverflow.com/questions/25481325/how-to-set-up-spark-on-windows?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+4. https://blog.sicara.com/get-started-pyspark-jupyter-guide-tutorial-ae2fe84f594f
 # Install Hadoop 2.8.4
 ## Prepare
 These softwares should be prepared to install Hadoop 2.8.0 on window 10 64bit
