@@ -19,7 +19,7 @@ These softwares should be prepared to install Hadoop 2.8.0 on window 10 64bit
 HADOOP_HOME: C:\hadoop-2.8.4
 HADOOP_CONF_DIR: %HADOOP_HOME%\etc\hadoop
 YARN_CONF_DIR: %HADOOP_CONF_DIR%
-JAVA_HOME: C:\java\jdk1.8.0_172\bin
+JAVA_HOME: C:\java\jdk1.8.0_172
 CLASSPATH: .;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib
 PATH: %PATH%;%JAVA_HOME%\bin;%JAVA_HOME%\lib;%JAVA_HOME%\jre\bin;%HADOOP_HOME%\bin
 ```
