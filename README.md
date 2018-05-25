@@ -85,7 +85,7 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 2. Delete file bin on `C:\Hadoop-2.8.4\bin`, replaced by file bin on file just downloaded.
 3. Open cmd and type command `hdfs namenode –format`.
 4. Open cmd and enter into `C:\Hadoop-2.8.4\sbin` and type command `start-all.cmd` to start apache.
-5. type `stop-all.cmd` to stop apache.
+5. Type `stop-all.cmd` to stop apache.
 6. You can use http://localhost:8088 to manage YARN and use http://localhost:50070 to manage hdfs.
 # Install Spark 2.3
 ## Prepare
