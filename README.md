@@ -52,11 +52,11 @@ PATH: %PATH%;%JAVA_HOME%\bin;%JAVA_HOME%\lib;%JAVA_HOME%\jre\bin;%HADOOP_HOME%\b
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>C:\hadoop-2.8.0\data\namenode</value>
+        <value>C:\hadoop-2.8.4\data\namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>C:\hadoop-2.8.0\data\datanode</value>
+        <value>C:\hadoop-2.8.4\data\datanode</value>
     </property>
 </configuration>
 ```
