@@ -140,6 +140,10 @@ dataDir=C:\Zookeeper\zkData
 1. Unzip `kafka_2.12-1.1.0.tgz` under `C:\`.
 2. Navigate to `C:\kafka_2.12-1.1.0\config`.
 3. Open `server.properties` and set the `log.dirs` for the log file to be stored.
+```
+# A comma separated list of directories under which to store log files
+log.dirs=C:\kafka_2.12-1.1.0\kafka-logs
+```
 ## Run
 1. Run command `zkserver` to launch zookeeper. It should be running on `<ip address>:2181` by default.
 2. Navigate to `C:\kafka_2.12-1.1.0` and run command `.\bin\windows\kafka-server-start.bat .\config\server.properties` to launch Broker.
