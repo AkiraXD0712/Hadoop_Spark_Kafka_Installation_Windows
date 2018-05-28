@@ -6,6 +6,9 @@ Reference:
 2. http://blog.51cto.com/balich/2058194
 3. https://stackoverflow.com/questions/25481325/how-to-set-up-spark-on-windows?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 4. https://blog.sicara.com/get-started-pyspark-jupyter-guide-tutorial-ae2fe84f594f
+5. https://j5technology.net/zookeeper-install
+6. https://blog.csdn.net/u012050154/article/details/76270655
+7. https://www.jianshu.com/p/b631c3899558
 # Install Hadoop 2.8.4
 ## Prepare
 These softwares should be prepared to install Hadoop 2.8.0 on window 10 64bit
@@ -83,10 +86,11 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 ## Hadoop configuration
 1. Download Windows binaries for Hadoop versions. (Link: https://github.com/steveloughran/winutils/tree/master/hadoop-2.8.3/bin)
 2. Delete file bin on `C:\Hadoop-2.8.4\bin`, replaced by file bin on file just downloaded.
-3. Open cmd and type command `hdfs namenode –format`.
-4. Open cmd and enter into `C:\Hadoop-2.8.4\sbin` and type command `start-all.cmd` to start apache.
-5. Type `stop-all.cmd` to stop apache.
-6. You can use http://localhost:8088 to manage YARN and use http://localhost:50070 to manage hdfs.
+## Run
+1. Open cmd and type command `hdfs namenode –format`.
+2. Open cmd and enter into `C:\Hadoop-2.8.4\sbin` and type command `start-all.cmd` to start apache.
+3. Type `stop-all.cmd` to stop apache.
+4. You can use http://localhost:8088 to manage YARN and use http://localhost:50070 to manage hdfs.
 # Install Spark 2.3
 ## Prepare
 1. Scala (Link: https://downloads.lightbend.com/scala/2.12.6/scala-2.12.6.msi)
@@ -97,8 +101,9 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 2. Install SBT and set `SBT_HOME` as an environment variable with value as `C:\sbt`.
 3. Extract `spark-2.3.0-bin-hadoop2.7.tgz` under `C:` and rename it to spark.
 4. Set `SPARK_HOME: C:\spark` and add `%SPARK_HOME%\bin` in PATH variable in environment variables.
-5. Run command: `spark-shell`
-6. Open http://localhost:4040/ in a browser to see the SparkContext web UI.
+## Run
+1. Run command: `spark-shell`
+2. Open http://localhost:4040/ in a browser to see the SparkContext web UI.
 # Install Pyspark in Anaconda
 ## Prepare
 1. Install anaconda
@@ -114,3 +119,31 @@ import findspark
 findspark.init()
 import pyspark
 ```
+# Install Kafka
+## Prepare
+1. Zookeeper (Link: https://zookeeper.apache.org/releases.html#download)
+2. Kafka (Link: https://kafka.apache.org/downloads)
+## Set up
+### Zookeeper
+1. Unzip `zookeeper-3.4.12.tar.gz` under `C:\Zookeeper`.
+2. Navigate to `C:\Zookeeper\zookeeper-3.4.12\conf` and rename `zoo_sample.cfg` to `zoo.cfg`.
+3. Open `zoo.cfg` and set the directory for all the Zookeeper Data to be stored. Make sure that this directory exists before starting Zookeeper.
+```
+# the directory where the snapshot is stored.
+# do not use /tmp for storage, /tmp here is just 
+# example sakes.
+dataDir=C:\Zookeeper\zkData
+```
+4. Edit your environment variables and add `ZOOKEEPER_HOME` as the variable name and the path where you installed.
+5. Add `%ZOOKEEPER_HOME%\bin` to the PATH environment variables.
+### Kafka
+1. Unzip `kafka_2.12-1.1.0.tgz` under `C:\`.
+2. Navigate to `C:\kafka_2.12-1.1.0\config`.
+3. Open `server.properties` and set the `log.dirs` for the log file to be stored.
+## Run
+1. Run command `zkserver` to launch zookeeper. It should be running on `<ip address>:2181` by default.
+2. Navigate to `C:\kafka_2.12-1.1.0` and run command `.\bin\windows\kafka-server-start.bat .\config\server.properties` to launch Broker.
+3. Navigate to `C:\kafka_2.12-1.1.0\bin\windows` and run command `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testDemo` to create topic.
+4. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-producer.bat --broker-list localhost:9092 --topic testDemo` to launch Producer.
+5. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-consumer.bat --bootstap-server localhost:9092 --topic testDemo` to launch Consumer.
+6. Now you can send your messages.
