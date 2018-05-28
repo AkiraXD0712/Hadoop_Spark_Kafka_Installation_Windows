@@ -139,7 +139,7 @@ dataDir=C:\Zookeeper\zkData
 ### Kafka
 1. Unzip `kafka_2.12-1.1.0.tgz` under `C:\`.
 2. Navigate to `C:\kafka_2.12-1.1.0\config`.
-3. Open `server.properties` and set the `log.dirs` for the log file to be stored.
+3. Open `server.properties` and set the `log.dirs` for the log file to be stored. Make sure that this directory exists.
 ```
 # A comma separated list of directories under which to store log files
 log.dirs=C:\kafka_2.12-1.1.0\kafka-logs
