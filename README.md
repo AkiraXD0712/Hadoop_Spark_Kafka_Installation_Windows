@@ -88,8 +88,8 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 2. Delete file bin on `C:\Hadoop-2.8.4\bin`, replaced by file bin on file just downloaded.
 ## Run
 1. Open cmd and type command `hdfs namenode –format`.
-2. Open cmd and enter into `C:\Hadoop-2.8.4\sbin` and type command `start-all.cmd` to start apache.
-3. Type `stop-all.cmd` to stop apache.
+2. Open cmd and enter into `C:\Hadoop-2.8.4\sbin` and type command `start-dfs.cmd` to start apache.
+3. Type `stop-dfs.cmd` to stop apache.
 4. You can use http://localhost:8088 to manage YARN and use http://localhost:50070 to manage hdfs.
 # Install Spark 2.3
 ## Prepare
@@ -99,7 +99,7 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 ## Set up
 1. Install Scala under `C:\scala` and set `SCALA_HOME: C:\scala` in Control Panel\System and Security\System goto "Adv System settings" and add `%SCALA_HOME%\bin` in PATH variable in environment variables.
 2. Install SBT and set `SBT_HOME` as an environment variable with value as `C:\sbt`.
-3. Extract `spark-2.3.0-bin-hadoop2.7.tgz` under `C:` and rename it to spark.
+3. Extract `spark-2.3.0-bin-hadoop2.7.tgz` under `C:` and rename it to `spark`.
 4. Set `SPARK_HOME: C:\spark` and add `%SPARK_HOME%\bin` in PATH variable in environment variables.
 ## Run
 1. Run command: `spark-shell`
