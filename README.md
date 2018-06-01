@@ -149,5 +149,5 @@ log.dirs=C:\kafka_2.12-1.1.0\kafka-logs
 2. Navigate to `C:\kafka_2.12-1.1.0` and run command `.\bin\windows\kafka-server-start.bat .\config\server.properties` to launch Broker.
 3. Navigate to `C:\kafka_2.12-1.1.0\bin\windows` and run command `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testDemo` to create topic.
 4. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-producer.bat --broker-list localhost:9092 --topic testDemo` to launch Producer.
-5. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-consumer.bat --bootstap-server localhost:9092 --topic testDemo` to launch Consumer.
+5. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testDemo` to launch Consumer.
 6. Now you can send your messages.
