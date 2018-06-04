@@ -93,7 +93,7 @@ set PATH=%PATH%;%HADOOP_PREFIX%\bin
 4. You can use http://localhost:8088 to manage YARN and use http://localhost:50070 to manage hdfs.
 # Install Spark 2.3
 ## Prepare
-1. Scala (Link: https://downloads.lightbend.com/scala/2.12.6/scala-2.12.6.msi)
+1. Scala (Link: https://downloads.lightbend.com/scala/2.11.12/scala-2.11.12.msi)
 2. SBT (Link: https://www.scala-sbt.org/download.html?_ga=2.24904318.53452594.1527175988-789449220.1524666135)
 3. Spark (Link: http://spark.apache.org/downloads.html)
 ## Set up
@@ -121,8 +121,8 @@ import pyspark
 ```
 # Install Kafka
 ## Prepare
-1. Zookeeper (Link: https://zookeeper.apache.org/releases.html#download)
-2. Kafka (Link: https://kafka.apache.org/downloads)
+1. Zookeeper (Link: http://apache.mediamirrors.org/zookeeper/)
+2. Kafka (Link: http://apache.crihan.fr/dist/kafka/1.1.0/kafka_2.11-1.1.0.tgz)
 ## Set up
 ### Zookeeper
 1. Unzip `zookeeper-3.4.12.tar.gz` under `C:\Zookeeper`.
@@ -137,17 +137,17 @@ dataDir=C:\Zookeeper\zkData
 4. Edit your environment variables and add `ZOOKEEPER_HOME` as the variable name and the path where you installed.
 5. Add `%ZOOKEEPER_HOME%\bin` to the PATH environment variables.
 ### Kafka
-1. Unzip `kafka_2.12-1.1.0.tgz` under `C:\`.
-2. Navigate to `C:\kafka_2.12-1.1.0\config`.
+1. Unzip `kafka_2.11-1.1.0.tgz` under `C:\`.
+2. Navigate to `C:\kafka_2.11-1.1.0\config`.
 3. Open `server.properties` and set the `log.dirs` for the log file to be stored. Make sure that this directory exists.
 ```
 # A comma separated list of directories under which to store log files
-log.dirs=C:\kafka_2.12-1.1.0\kafka-logs
+log.dirs=C:\kafka_2.11-1.1.0\kafka-logs
 ```
 ## Run
 1. Run command `zkserver` to launch zookeeper. It should be running on `<ip address>:2181` by default.
-2. Navigate to `C:\kafka_2.12-1.1.0` and run command `.\bin\windows\kafka-server-start.bat .\config\server.properties` to launch Broker.
-3. Navigate to `C:\kafka_2.12-1.1.0\bin\windows` and run command `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testDemo` to create topic.
-4. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-producer.bat --broker-list localhost:9092 --topic testDemo` to launch Producer.
-5. Open another cmd and navigate to `C:\kafka_2.12-1.1.0\bin\windows`. Run command `kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testDemo` to launch Consumer.
+2. Navigate to `C:\kafka_2.11-1.1.0` and run command `.\bin\windows\kafka-server-start.bat .\config\server.properties` to launch Broker.
+3. Navigate to `C:\kafka_2.11-1.1.0\bin\windows` and run command `kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testDemo` to create topic.
+4. Open another cmd and navigate to `C:\kafka_2.11-1.1.0\bin\windows`. Run command `kafka-console-producer.bat --broker-list localhost:9092 --topic testDemo` to launch Producer.
+5. Open another cmd and navigate to `C:\kafka_2.11-1.1.0\bin\windows`. Run command `kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testDemo` to launch Consumer.
 6. Now you can send your messages.
